@@ -19,6 +19,6 @@ return [
         'amazonaws.com',
         'daddybrasil.s3-sa-east-1.amazonaws.com',
         'daddybrasilapp.test',
-        'dynamic-img.test'
+        'dynamic-img.test',
     ]),
 ];
