@@ -51,7 +51,7 @@ IMAGE_SOURCE_FILESYSTEM=s3
 ```
 
 ```html
-<img src="/img?path=uploads/avatar.jpg&w=200&h=200&q=95&fs=s3" alt="My cached image from filesystem: s3" />
+<img src="/img?path=uploads/avatar.jpg&w=200&h=200&q=95&fs=s3" alt="My image" />
 ```
 
 ## Changelog
