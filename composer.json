@@ -19,7 +19,7 @@
         "php": "^8.2",
         "ext-curl": "*",
         "ext-gd": "*",
-        "league/flysystem-aws-s3-v3": "3.0",
+        "league/flysystem-aws-s3-v3": "3.29.0",
         "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
