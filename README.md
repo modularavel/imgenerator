@@ -23,13 +23,6 @@ You can install the package via composer:
 composer require modularavel/image
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="image-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
 
 ```bash
@@ -40,26 +33,38 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'source' => [
+        'filesystem' => env('IMAGE_SOURCE_FILESYSTEM', 'public'), // Options: "local", "public", "s3"
+    ],
+    'cache' => [
+        'folder' => env('IMAGE_CACHE_FOLDER', '/cache'),
+        'prefix' => env('IMAGE_CACHE_PREFIX', 'cache_'),
+        'filesystem' => env('IMAGE_CACHE_FILESYSTEM', 'local'), // Options: "local", "public", "s3"
+    ],
+    'allow_external_sites' => env('IMAGE_ALLOW_EXTERNAL_SITES', true),
+    'allow_all_external_sites' => env('IMAGE_ALLOW_ALL_EXTERNAL_SITES', true),
+    'allowed_external_hosts' => env('IMAGE_ALLOWED_EXTERNAL_HOSTS', [
+        'facebook.com',
+        'img.youtube.com',
+        'upload.wikimedia.org',
+        'imgur.com',
+        'amazonaws.com',
+    ]),
 ];
-```
 
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="image-views"
 ```
 
 ## Usage
 
-```php
-$image = new Modularavel\Image();
-echo $image->echoPhrase('Hello, Modularavel!');
+##### Add this to your .env file
+
+```dotenv
+# local | s3 | public
+IMAGE_SOURCE_FILESYSTEM=s3
 ```
 
-## Testing
-
-```bash
-composer test
+```html
+<img src="/img?path=uploads/avatar.jpg&w=200&h=200&q=95&fs=s3" alt="My cached image from filesystem: s3" />
 ```
 
 ## Changelog
