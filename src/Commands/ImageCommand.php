@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Modularavel\Image\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ImageCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'image';
 
     public $description = 'My command';
 
