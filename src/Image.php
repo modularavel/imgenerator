@@ -5,6 +5,7 @@ namespace Modularavel\Image;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Modularavel\Image\Exceptions\NoImageSpecifiedException;
+use Throwable;
 
 /**
  * TimThumb by Ben Gillbanks and Mark Maunder
@@ -29,8 +30,12 @@ use Modularavel\Image\Exceptions\NoImageSpecifiedException;
 */
 
 // Build up the src query
-// $_GET['src'] = "https://bucketname.s3-sa-east-1.amazonaws.com/{$_GET['user']}/fotos/large/{$_GET['file']}";
-$_GET['src'] = Storage::disk($_GET['fs'] ?? config('image.source.filesystem'))->url($_GET['path'] ?? "{$_GET['user']}/fotos/large/{$_GET['file']}");
+
+$sizeFolder = $_GET['size'] ?? 'large';
+
+$_GET['src'] = "https://daddybrasil.s3-sa-east-1.amazonaws.com/{$_GET['user']}/fotos/$sizeFolder/{$_GET['file']}";
+
+// $_GET['src'] = Storage::disk($_GET['fs'] ?? config('image.source.filesystem'))->url($_GET['path'] ?? "{$_GET['user']}/fotos/$sizeFolder/{$_GET['file']}");
 
 define('VERSION', '2.8.11');																		// Version of this script
 
@@ -213,7 +218,7 @@ class Image
     }
 
     /**
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function __construct()
     {
@@ -223,7 +228,7 @@ class Image
         $this->debug(1, 'Starting new request from '.$this->getIP().' to '.$_SERVER['REQUEST_URI']);
         $this->calcDocRoot();
 
-        // On windows systems I'm assuming fileinode returns an empty string or a number that doesn't change. Check this.
+        // On Windows systems I'm assuming fileinode returns an empty string or a number that doesn't change. Check this.
         $this->salt = @filemtime(__FILE__).'-'.@fileinode(__FILE__);
         $this->debug(3, 'Salt is: '.$this->salt);
 
