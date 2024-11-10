@@ -1,6 +1,7 @@
 # modularavel/image
 
-Dynamicly image resize by url parameters... fast and easy to use and/or customize.
+Optimized image resize dynamically by url parameters... the response time is very very fast
+
 
 ## Installation
 
