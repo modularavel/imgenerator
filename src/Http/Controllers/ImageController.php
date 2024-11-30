@@ -1,16 +1,16 @@
 <?php
 
-namespace Modularavel\Image\Http\Controllers;
+namespace Modularavel\Imgenerator\Http\Controllers;
 
-use JetBrains\PhpStorm\NoReturn;
-use Modularavel\Image\Image;
+use Illuminate\Http\Request;
+use Modularavel\Imgenerator\Facades\Imgenerator;
 
 class ImageController
 {
-    #[NoReturn] public function __invoke()
+    public function __invoke(Request $request)
     {
-        request()->header();
+        $request->header();
 
-        Image::start();
+        Imgenerator::start();
     }
 }

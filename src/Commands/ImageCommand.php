@@ -1,6 +1,6 @@
 <?php
 
-namespace Modularavel\Image\Commands;
+namespace Modularavel\Imgenerator\Commands;
 
 use Illuminate\Console\Command;
 

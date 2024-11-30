@@ -1,6 +1,6 @@
 <?php
 
-namespace Modularavel\Image\Exceptions;
+namespace Modularavel\Imgenerator\Exceptions;
 
 use Exception;
 

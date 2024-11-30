@@ -1,9 +1,9 @@
 <?php
 
-namespace Modularavel\Image\Tests;
+namespace Modularavel\Imgenerator\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Modularavel\Image\ImageServiceProvider;
+use Modularavel\Imgenerator\ImgeneratorServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -13,14 +13,14 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Modularavel\\Image\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Modularavel\\Imgenerator\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            ImageServiceProvider::class,
+            ImgeneratorServiceProvider::class,
         ];
     }
 

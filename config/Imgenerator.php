@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'source' => [
+        'filesystem' => env('MODULARAVEL_IMGENERATOR_SOURCE_FILESYSTEM', 's3'), // Options: "local", "public", "s3"
+    ],
+    'cache' => [
+        'folder' => env('MODULARAVEL_IMGENERATOR_CACHE_FOLDER', './cache'),
+        'prefix' => env('MODULARAVEL_IMGENERATOR_CACHE_PREFIX', 'cache_'),
+        'filesystem' => env('MODULARAVEL_IMGENERATOR_CACHE_FILESYSTEM', 'local'), // Options: "local", "public", "s3"
+    ],
+    'allow_external_sites' => env('MODULARAVEL_IMGENERATOR_ALLOW_EXTERNAL_SITES', true),
+    'allow_all_external_sites' => env('MODULARAVEL_IMGENERATOR_ALLOW_ALL_EXTERNAL_SITES', true),
+    'allowed_external_hosts' => env('MODULARAVEL_IMGENERATOR_ALLOWED_EXTERNAL_HOSTS', [
+        'facebook.com',
+        'img.youtube.com',
+        'upload.wikimedia.org',
+        'imgur.com',
+        'amazonaws.com',
+        'daddybrasil.s3-sa-east-1.amazonaws.com',
+        'daddybrasilapp.test',
+        'dynamic-img.test',
+        '192.168.0.2',
+        '127.0.0.1',
+        '0.0.0.0',
+        'localhost'
+    ]),
+];

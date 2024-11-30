@@ -1,5 +1,5 @@
 {
-    "name": "modularavel/image",
+    "name": "modularavel/imgenerator",
     "description": "This is my package image",
     "keywords": [
         "Modularavel",
@@ -37,13 +37,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Modularavel\\Image\\": "src/",
-            "Modularavel\\Image\\Database\\Factories\\": "database/factories/"
+            "Modularavel\\Imgenerator\\": "src/",
+            "Modularavel\\Imgenerator\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Modularavel\\Image\\Tests\\": "tests/",
+            "Modularavel\\Imgenerator\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -75,10 +75,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Modularavel\\Image\\ImageServiceProvider"
+                "Modularavel\\Imgenerator\\ImgeneratorServiceProvider"
             ],
             "aliases": {
-                "Image": "Modularavel\\Image\\Facades\\Image"
+                "Imgenerator": "Modularavel\\Imgenerator\\Facades\\Imgenerator"
             }
         }
     },

@@ -1,6 +1,6 @@
 <?php
 
-namespace Modularavel\Image\Database\Factories;
+namespace Modularavel\Imgenerator\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace Modularavel\Image;
+namespace Modularavel\Imgenerator;
 
-use Modularavel\Image\Commands\ImageCommand;
+use Modularavel\Imgenerator\Commands\ImageCommand;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class ImageServiceProvider extends PackageServiceProvider
+class ImgeneratorServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -17,14 +17,14 @@ class ImageServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('image')
+            ->name('imgenerator')
             ->hasViews()
             ->hasAssets()
             ->hasConfigFile()
             ->hasRoutes(['web'])
             ->hasCommand(ImageCommand::class)
             ->sharesDataWithAllViews('downloads', 3)
-            ->publishesServiceProvider(ImageServiceProvider::class)
+            ->publishesServiceProvider(ImgeneratorServiceProvider::class)
             ->hasInstallCommand(function (InstallCommand $command) {
                 $command
                     ->startWith(function (InstallCommand $command) {

@@ -1,6 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modularavel\Image\Http\Controllers\ImageController;
+use Modularavel\Imgenerator\Http\Controllers\ImageController;
 
 Route::get('img', ImageController::class)->name('show.img');
