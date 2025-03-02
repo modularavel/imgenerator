@@ -31,11 +31,11 @@ use Throwable;
 
 // Build up the src query
 
-$sizeFolder = $_GET['size'] ?? 'large';
+// $sizeFolder = $_GET['size'] ?? 'large';
 
 // $_GET['src'] = "https://daddybrasil.s3-sa-east-1.amazonaws.com/{$_GET['user']}/fotos/$sizeFolder/{$_GET['file']}";
 
-$_GET['src'] = Storage::disk($_GET['fs'] ?? config('imgenerator.source.filesystem'))->url($_GET['path'] ?? "{$_GET['user']}/fotos/$sizeFolder/{$_GET['file']}");
+// $_GET['src'] = Storage::disk($_GET['fs'] ?? config('imgenerator.source.filesystem'))->url($_GET['path'] ?? "{$_GET['user']}/fotos/$sizeFolder/{$_GET['file']}");
 
 define('VERSION', '2.8.11');                                                                        // Version of this script
 
