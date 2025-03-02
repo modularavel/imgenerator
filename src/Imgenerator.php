@@ -37,6 +37,10 @@ use Throwable;
 
 // $_GET['src'] = Storage::disk($_GET['fs'] ?? config('imgenerator.source.filesystem'))->url($_GET['path'] ?? "{$_GET['user']}/fotos/$sizeFolder/{$_GET['file']}");
 
+if(!isset($_GET['src'])) {
+    abort('missing parameter: src=');
+}
+
 define('VERSION', '2.8.11');                                                                        // Version of this script
 
 if (!defined('DEBUG_ON')) {
